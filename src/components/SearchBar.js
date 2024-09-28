@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchWeatherData } from '../redux/weatherSlice';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { fetchWeatherData } from "../redux/weatherSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const SearchBar = () => {
-    const [city, setCity] = useState('');
-    const dispatch = useDispatch();
+  const [city, setCity] = useState("");
+  const dispatch = useDispatch();
 
-    const handleSearch = () => {
-        dispatch(fetchWeatherData({ city, units: 'C' }));
-    };
+  const handleSearch = () => {
+    dispatch(fetchWeatherData({ city, units: "C" }));
+  };
 
-    return (
-        <div className="search-bar">
+  return (
+    <div className="search-bar">
       <div className="input-container">
         <span className="search-icon" onClick={handleSearch}>
           <FontAwesomeIcon icon={faSearch} />
@@ -28,8 +27,7 @@ const SearchBar = () => {
         />
       </div>
     </div>
-      
-    );
+  );
 };
 
 export default SearchBar;

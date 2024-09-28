@@ -8,8 +8,10 @@ const WeatherCardHumidity = () => {
 
   return (
     <div className="weather-card">
-      <p style={{ color: "#cfd0d3", textAlign: "left" }}>Humidity</p>
-      <p className="textalign">{weatherData.current.humidity}%</p>
+      <p className="main-text">Humidity</p>
+      <p className="textalign">
+        <span className="text-weather">{weatherData.current.humidity}</span>%
+      </p>
       <p>Normal</p>
     </div>
   );

@@ -8,8 +8,8 @@ const WeatherCardVisiblity = () => {
 
   return (
     <div className="weather-card">
-      <p style={{ color: "#cfd0d3", textAlign: "left" }}>Visiblity</p>
-      <p className="textalign">{weatherData.current.vis_km}Km</p>
+      <p className="main-text">Visiblity</p>
+      <p className="text-weather">{weatherData.current.vis_km}Km</p>
       <p>Average</p>
     </div>
   );

@@ -9,7 +9,7 @@ const WeatherCardSunset = () => {
 
   return (
     <div className="weather-card">
-      <p style={{ color: "#cfd0d3", textAlign: "left" }}>Sunrise & Sunset</p>
+      <p className="main-text">Sunrise & Sunset</p>
 
       <p className="sunsetarrowup">
         <img src={image} />

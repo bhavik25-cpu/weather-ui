@@ -6,8 +6,8 @@ body {
 
 .container {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   overflow-y: auto;
   padding-top: 100px;
   padding-bottom: 100px;
@@ -15,61 +15,61 @@ body {
 
 .app {
   background-color: #ffffff;
-  border-radius: 30px; 
+  border-radius: 30px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   padding: 0px;
-  display: flex; 
-  justify-content: space-between; 
-  width: 90%; 
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
   max-width: 1600px;
 }
 
 .left-section {
-  flex: 1; 
-  max-width: 30%; 
+  flex: 1;
+  max-width: 30%;
   margin-right: 20px;
 }
 
 .right-section {
-  flex: 2; 
+  flex: 2;
   display: flex;
-  flex-direction: column; 
-  background-color: #c0c1c5; 
-  border-top-right-radius: 33px;
-  border-bottom-right-radius: 33px;
+  flex-direction: column;
+  background-color: #c0c1c5;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
   padding: 20px;
   max-width: auto;
 }
 
 .search-bar {
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   margin-bottom: 20px;
 }
 
 .input-container {
-  display: flex; 
-  align-items: center; 
-  border-radius: 20px; 
-  padding: 10px; 
-  flex: 1; 
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  padding: 10px;
+  flex: 1;
   margin-left: 31px;
   margin-top: 7%;
 }
 
 .search-icon {
-  color: black; 
-  margin-right: 10px; 
-  font-size: 18px; 
+  color: black;
+  margin-right: 10px;
+  font-size: 18px;
   cursor: pointer;
 }
 
 .search-input {
-  border: none; 
-  outline: none; 
-  background-color: transparent; 
-  color: black; 
-  flex: 1; 
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: black;
+  flex: 1;
   font-size: 16px;
 }
 
@@ -79,15 +79,15 @@ body {
 }
 
 .weather-card {
-  background-color: white; 
-  border-radius: 10px; 
+  background-color: white;
+  border-radius: 10px;
   padding: 10px;
   width: 150px;
   height: 178px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  text-align: center; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
   font-family: Arial, sans-serif;
   margin: 5px;
 }
@@ -127,8 +127,8 @@ h1 {
   display: flex;
   margin-bottom: 10px;
   flex-wrap: wrap;
-  
- align-content: space-around
+
+  align-content: space-around;
 }
 
 .top-cards > div,
@@ -200,18 +200,23 @@ h1 {
 }
 
 .left-side-weather img {
-  width: 50px;
-  height: 50px;
+  width: 200px;
+  height: 200px;
   margin: 10px 0;
 }
 
 @media (max-width: 768px) {
   .left-side-weather {
     padding: 10px;
+    position: relative;
+    left: 100%;
   }
 
   .left-side-weather p {
     font-size: 20px;
+    position: relative;
+    left: 2px;
+    top: 61px;
   }
 
   .left-side-weather img {
@@ -342,7 +347,7 @@ h1 {
   width: 55px;
   height: 55px;
   border: 1px solid black;
-  border-radius: 50%;
+  border-radius: 20%;
   object-fit: cover;
 }
 
@@ -353,10 +358,11 @@ h1 {
 .weather-card-uv .recharts-wrapper {
   position: absolute !important;
   cursor: default;
-  width: auto !important;
+  width: 270px !important;
   height: auto !important;
-  top: 88px;
-  left: 23%;
+  top: 56px;
+  left: -3%;
+  transform: scaleY(-1);
 }
 
 .sunsetarrowup {
@@ -364,6 +370,7 @@ h1 {
   align-items: center;
   gap: 15px;
   align-content: center;
+  justify-content: center;
 }
 
 .sunrisearrowdown {
@@ -371,6 +378,7 @@ h1 {
   align-items: center;
   gap: 15px;
   align-content: center;
+  justify-content: center;
 }
 
 .sunrisearrowdown img {
@@ -391,11 +399,45 @@ h1 {
 .image-with-rounded-corners {
   border-radius: 20px;
   overflow: hidden;
+  margin-top: 72%;
+  position: relative;
 }
 
 .image-with-rounded-corners img {
   width: 100%;
   height: auto;
-  margin-top: 122%;
   border-radius: 4%;
+  opacity: 0.8;
+  background-color: #000;
+}
+.image-with-rounded-corners p {
+  position: absolute;
+  bottom: 40%;
+  font-size: 17px;
+  font-weight: 100;
+  color: #fff;
+  left: 0%;
+  right: 0%;
+  width: 100%;
+  text-shadow: 1px 1px 2px #000;
+}
+.todays_highlight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.light-text {
+  color: #4a4a4a;
+}
+.text-weather {
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.main-text {
+  color: #cfd0d3;
+  text-align: left;
 }

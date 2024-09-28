@@ -8,9 +8,11 @@ const WeatherCardAir = () => {
 
   return (
     <div className="weather-card">
-      <p style={{ color: "#cfd0d3", textAlign: "left" }}>Air Quality</p>
+      <p className="main-text">Air Quality</p>
       <p className="textalign">
-        {Math.round(weatherData.forecast.forecastday[0].day.air_quality.co)}
+        <span className="text-weather">
+          {Math.round(weatherData.forecast.forecastday[0].day.air_quality.co)}
+        </span>
       </p>
       <p>Unhealthy</p>
     </div>

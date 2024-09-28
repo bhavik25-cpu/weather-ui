@@ -60,38 +60,40 @@ function App() {
               </div>
             </div>
           </div>
+          <div className="todays_highlight">
+            <div className="weekly-forecast-horizontal">
+              {daysOfWeek.map((day, index) => {
+                const weatherForDay = weatherData?.forecast?.forecastday?.find(
+                  (forecast) =>
+                    new Date(forecast.date).toLocaleDateString("en-US", {
+                      weekday: "long"
+                    }) === day
+                );
 
-          <div className="weekly-forecast-horizontal">
-            {daysOfWeek.map((day, index) => {
-              const weatherForDay = weatherData?.forecast?.forecastday?.find(
-                (forecast) =>
-                  new Date(forecast.date).toLocaleDateString("en-US", {
-                    weekday: "long"
-                  }) === day
-              );
+                return weatherForDay ? (
+                  <WeatherCardSmall
+                    key={index}
+                    day={day}
+                    temp_c={weatherForDay.day.avgtemp_c}
+                    condition={weatherForDay.day.condition}
+                  />
+                ) : null;
+              })}
+            </div>
+            <div>
+              <h1>Today's Highlights</h1>
+              <div className="top-cards">
+                <WeatherCardUv />
+                <WeatherCardWind />
+                <WeatherCardSunset />
+              </div>
 
-              return weatherForDay ? (
-                <WeatherCardSmall
-                  key={index}
-                  day={day}
-                  temp_c={weatherForDay.day.avgtemp_c}
-                  condition={weatherForDay.day.condition}
-                />
-              ) : null;
-            })}
-          </div>
-
-          <h1>Today's Highlights</h1>
-          <div className="top-cards">
-            <WeatherCardUv />
-            <WeatherCardWind />
-            <WeatherCardSunset />
-          </div>
-
-          <div className="bottom-cards">
-            <WeatherCardHumidity />
-            <WeatherCardVisiblity />
-            <WeatherCardAir />
+              <div className="bottom-cards">
+                <WeatherCardHumidity />
+                <WeatherCardVisiblity />
+                <WeatherCardAir />
+              </div>
+            </div>
           </div>
         </div>
       </div>
